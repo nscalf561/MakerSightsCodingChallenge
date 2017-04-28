@@ -21,6 +21,15 @@ router.route('/login')
 router.route('/logout')
   .get(authController.logout);
 
+router.route('/auth/facebook')
+  .get(passport.authenticate('facebook', {scope: 'email' }));
+
+router.route('/auth/facebook/callback')
+  .get(passport.authenticate('facebook', {
+    successRedirect: '/profile',
+    failureRedirect: '/login'
+  }));
+
 router.route('/profile')
   .get(authController.getProfile);
 
