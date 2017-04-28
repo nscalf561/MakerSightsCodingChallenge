@@ -4,7 +4,7 @@ var app     = require('../server'),
 var indexController = {
 
   home: function (req, res) {
-    res.sendFile(path.join(__dirname + '/../public/index.html'));
+    res.sendFile(path.join(__dirname + '/../views/index.html'));
   }
 
 };
