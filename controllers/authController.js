@@ -30,6 +30,11 @@ var authController = {
     // });
   },
 
+  logout: function(req, res) {
+    req.logout();
+    res.redirect('/');
+  },
+
   getProfile: function (req, res, next) {
     if (req.isAuthenticated()) {
       res.render('profile.html', {

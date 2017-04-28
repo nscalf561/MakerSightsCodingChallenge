@@ -18,6 +18,9 @@ router.route('/login')
   .post(passport.authenticate('local-login', {failureRedirect:'/login'}),
     authController.postLocalLogin);
 
+router.route('/logout')
+  .get(authController.logout);
+
 router.route('/profile')
   .get(authController.getProfile);
 

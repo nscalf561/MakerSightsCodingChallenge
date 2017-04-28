@@ -1,6 +1,7 @@
 module.exports = function (passport) {
 
   var LocalStrategy   = require('passport-local').Strategy,
+      GoogleStrategy  = require('passport-google-oauth').OAuth2Strategy,
       User            = require('./models/user');
 
   passport.serializeUser(function (user, done) {
